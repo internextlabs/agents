@@ -1,0 +1,33 @@
+title: Deep Work vs Shallow Work
+subtitle: Panduan praktis memisahkan pekerjaan yang mengubah sesuatu dari pekerjaan yang hanya menjaga, lalu mengukurnya dengan empat angka sederhana.
+kicker: Panduan Kerja
+edition: Edisi 2026
+author: alysaurina
+lang: id
+theme: korporat
+page_size: A4
+part_label: Bagian
+footer_text: Deep Work vs Shallow Work
+toc: true
+toc_after: Pengantar
+cover:
+  motif: orbit
+  tagline: Bukan soal lebih sibuk. Soal apa yang mendapat waktumu.
+  title_lines:
+    - Deep Work
+    - vs
+    - {text: Shallow Work, style: accent}
+  highlights:
+    - {mark: 1, label: Anatomi}
+    - {mark: 2, label: Blok}
+    - {mark: 3, label: Audit}
+  chips: [3 Bagian, 2 Template, 4 Angka]
+back_cover:
+  quote: '"Yang hilang bukan waktu, tapi kemampuan yang perlahan berhenti dipakai."'
+  blurb: Buku pendek tentang cara memisahkan pekerjaan berkedalaman dari pekerjaan dangkal, lalu mengubahnya menjadi sistem yang bisa diukur dan dipertahankan.
+  bullets: [Empat prasyarat deep work, Template perencana blok mingguan, Template audit mingguan, Batasan yang perlu diakui]
+chapters:
+  - chapters/*.md
+output:
+  name: Deep-Work-vs-Shallow-Work
+  formats: [pdf, docx]

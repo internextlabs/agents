@@ -1,0 +1,10 @@
+<div class="dk">
+  <div class="dk-chev">
+    <div><div class="dk-k">08.30</div><div class="dk-title">Cek pesan</div><div class="dk-desc">10 menit, dua kali saja</div></div>
+    <div><div class="dk-k">09.00</div><div class="dk-title">Blok berkedalaman</div><div class="dk-desc">90 menit, satu tugas</div></div>
+    <div><div class="dk-k">12.00</div><div class="dk-title">Balas pesan</div><div class="dk-desc">Batas kedua hari ini</div></div>
+    <div><div class="dk-k">13.00</div><div class="dk-title">Kerja dangkal</div><div class="dk-desc">Rapat, administrasi, balasan</div></div>
+    <div><div class="dk-k">16.30</div><div class="dk-title">Balas pesan</div><div class="dk-desc">Blok ditutup, context selesai</div></div>
+  </div>
+  <div class="dk-note">Dua blok pesan, tiga blok kerja. Semua pekerjaan lain dijadwalkan di luar blok.</div>
+</div>
