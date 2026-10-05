@@ -1,0 +1,29 @@
+title: Membaca yang Menggugah
+subtitle: Analisis tematik atas persepsi guru tentang AI di kelas
+kicker: Buku Saku
+edition: 2026
+author: Untuk belajar pribadi
+lang: id
+theme: edukasi
+page_size: A5
+part_label: Bab
+footer_text: Membaca yang Menggugah
+toc: true
+toc_after: Tentang Buku Ini
+cover:
+  motif: book
+  tagline: Dari transkrip ke tema, tanpa melompat langkah.
+  title_lines:
+    - {text: Membaca, style: small}
+    - {text: yang Menggugah}
+    - {text: dari data ke tema, style: accent}
+  chips: [7 Bab, 6 Sumber Terverifikasi, Untuk Belajar Pribadi]
+back_cover:
+  quote: '"Data tidak pernah berbicara sendiri. Yang berbicara adalah Anda, dan itu bagian dari pekerjaannya."'
+  blurb: Buku saku untuk pemilik data wawancara yang belum tahu harus apa denganya. Isinya analisis tematik dari data yang sudah ada, bukan panduan redesigned wawancara.
+  bullets: [Dari data mentah ke kode, tema, dan interpretasi, Apa yang boleh dan tidak boleh diklaim, Posisi Braun dan Clarke soal agreement antar-pencoder]
+chapters:
+  - chapters/*.md
+output:
+  name: Membaca-yang-Menggugah-Pocket-Book
+  formats: [pdf, docx]
