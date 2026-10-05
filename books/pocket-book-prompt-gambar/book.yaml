@@ -1,0 +1,25 @@
+title: Menulis yang Menggambar
+subtitle: Strategi prompt, konsistensi, dan etika untuk model gambar
+kicker: Buku Saku
+edition: 2026
+author: Untuk belajar pribadi
+lang: id
+theme: teknologi
+page_size: A5
+part_label: Bab
+footer_text: Menulis yang Menggambar
+toc: true
+toc_after: Tentang Buku Ini
+cover:
+  motif: book
+  tagline: Dari menebak-nebak ke mengomunikasikan. Plus di mana garis etikanya.
+  chips: [7 Bab, 7 Sumber Terverifikasi, Untuk Belajar Pribadi]
+back_cover:
+  quote: '"Setiap kata yang tidak Anda tulis adalah keputusan yang Anda serahkan ke model."'
+  blurb: Buku saku untuk siapa yang menulis prompt dan sering mendapat hasil yang meleset. Isinya cara kerja model gambar, anatomi prompt yang bekerja, mengunci konsistensi, debugging, dan etika yang tidak bisa dinegosiasikan.
+  bullets: [Mengapa prompt panjang tidak berarti prompt yang baik, Cara melacak klaim di dalam gambar, Watermark tampilan vs yang tak terlihat, Kewajiban yang sebenarnya ada di tangan Anda]
+chapters:
+  - chapters/*.md
+output:
+  name: Menulis-yang-Menggambar-Pocket-Book
+  formats: [pdf, docx]
