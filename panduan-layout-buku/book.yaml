@@ -1,0 +1,33 @@
+title: Panduan Layout Buku
+subtitle: Komponen, sintaks, dan kendali tata letak dokumen panjang dari satu sumber markdown.
+kicker: Dokumentasi Sistem
+edition: Edisi 2026
+author: alysaurina
+lang: id
+theme: teknologi
+page_size: A4
+part_label: Bagian
+footer_text: Panduan Layout Buku
+toc: true
+toc_after: Pengantar
+cover:
+  motif: grid
+  tagline: Yang muncul hanya yang kamu tulis.
+  title_lines:
+    - Panduan
+    - Layout
+    - {text: Buku, style: accent}
+  highlights:
+    - {mark: K, label: Kerangka}
+    - {mark: T, label: Tipografi}
+    - {mark: C, label: Komponen}
+  chips: [4 Bagian, 13 Callout, 9 Gaya Tabel]
+back_cover:
+  quote: '"Layout yang baik bukan yang paling banyak komponennya, tapi yang paling mudah dikendalikan."'
+  blurb: Dokumentasi teknis sebuah sistem tata letak buku, dari kerangka halaman sampai kendali tema dan build.
+  bullets: [Komponen opt-in yang tidak muncul jika tidak dipakai, Anti-terbelah untuk diagram, callout, dan baris tabel, Tujuh tema dengan kontras WCAG terverifikasi, Satu sumber untuk PDF dan DOCX]
+chapters:
+  - chapters/*.md
+output:
+  name: Panduan-Layout-Buku
+  formats: [pdf, docx]
