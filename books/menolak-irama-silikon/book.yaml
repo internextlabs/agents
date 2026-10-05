@@ -1,0 +1,32 @@
+title: Menolak Irama Silikon
+subtitle: Membela lambatnya pikiran di tengah badai akselerasi mesin
+kicker: Esai
+edition: Terbitan 2026
+author: alysaurina
+lang: id
+theme: alam
+page_size: B5
+part_label: Bab
+footer_text: Menolak Irama Silikon
+toc: true
+toc_after: Pengantar
+cover:
+  motif: waves
+  tagline: Bukan soal lebih cepat. Tapi soal siapa yang menentukan tempo.
+  title_lines:
+    - Menolak
+    - {text: Irama Silikon, style: accent}
+  highlights:
+    - {mark: 1, label: Asal-usul}
+    - {mark: 2, label: Biologi}
+    - {mark: 3, label: Sekolah}
+  chips: [3 Bab, 1 Kutipan, 1 Intisari]
+back_cover:
+  quote: '"Yang ditolak bukan mesinnya, melainkan pengubahannya menjadi ukuran tunggal."'
+  blurb: Tulis ulang esai Simbioma.net tentang bagaimana waktu berubah dari lapisan pengalaman menjadi komoditas, dan mengapa kecepatan bukan ukuran keutamaan hidup.
+  bullets: [Asal-usul jam mekanis dan dikotomi Chronos-Kairos, Erosi inkubasi kognitif di otak, Pedagogi waktu lambat di ruang kelas, Batas dan kritik dari argumen]
+chapters:
+  - chapters/*.md
+output:
+  name: Menolak-Irama-Silikon
+  formats: [pdf]
