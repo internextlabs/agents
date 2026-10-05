@@ -10,7 +10,7 @@ ditutup satu kotak intisari.
 
 | Berkas | Isi |
 |---|---|
-| `out/Deep-Work-vs-Shallow-Work.pdf` | 21 halaman, A4, tema korporat |
+| `out/Deep-Work-vs-Shallow-Work.pdf` | 26 halaman, B5, tema premium (plum & emas, Young Serif/Lora) |
 | `out/Deep-Work-vs-Shallow-Work.docx` | Versi yang bisa disunting di Word |
 
 ## Struktur

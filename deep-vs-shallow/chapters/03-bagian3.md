@@ -14,7 +14,7 @@ seperti itu tidak bisa diperiksa, dan tidak bisa dipakai untuk memutuskan apa ya
 
 Yang dibutuhkan bukan pelaporan lengkap, melainkan satu catatan kecil yang bisa diisi dalam dua
 menit dan dibaca dalam dua menit. Pelaporan yang terdengar lengkap sering muncul justru karena
-sheets-nya terlalu besar untuk diisi konsisten, sehingga yang terjadi adalah minggu pertama diisi
+lembarnya terlalu besar untuk diisi konsisten, sehingga yang terjadi adalah minggu pertama diisi
 penuh, minggu kedua masih, dan minggu ketiga berhenti sama sekali.
 
 {widths=8,60,32}

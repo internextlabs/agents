@@ -104,7 +104,7 @@ Perhatikan contoh nyata dari satu blok pagi. Dalam versi pertama, blok itu diisi
 datang. Di akhir blok, orang biasanya merasa sudah bekerja keras tetapi tidak ada yang bisa
 ditunjukkan.
 
-Dalam versi kedua, blok itu diisi dengan "menulis bagian 2 dan 3,total enam ratus kata",
+Dalam versi kedua, blok itu diisi dengan "menulis bagian 2 dan 3, total enam ratus kata",
 notifikasi dimatikan sejak blok dimulai, dan surel ditumpuk untuk dijawab setelah blok selesai.
 Perbedaannya bukan pada usaha yang dikeluarkan, melainkan pada apakah ada sesuatu yang bisa
 diperiksa di akhir. Blok kedua sering terasa lebih panjang justru karena tidak terputus.
@@ -122,7 +122,7 @@ berat, sakit, atau proyek yang sedang berjalan cepat. Memaksa blok pada minggu s
 hanya menghasilkan rasa bersalah yang tidak perlu. Aturan yang bisa dilewati adalah aturan yang
 bisa dipertahankan.
 
-Mulai dari satu blok per minggu selama dua minggu. Setelah-feel-nya terasa, tambah satu lagi.
+Mulai dari satu blok per minggu selama dua minggu. Setelah dirasa nyaman, tambah satu lagi.
 Menambah satu per minggu jauh lebih tahan lama daripada memulai lima sekaligus. Memelihara
 lima blok yang sebagian besar gagal adalah beban yang lebih besar daripada empat blok yang
 berjalan.
