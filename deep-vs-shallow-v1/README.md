@@ -3,9 +3,6 @@
 Artikel berbentuk buku (PDF + DOCX) tentang memisahkan pekerjaan yang mengubah sesuatu dari
 pekerjaan yang hanya menjaga, lalu menjadikannya sistem yang bisa diukur.
 
-Versi kedua: naskah lebih panjang dan deskriptif, tanpa callout di dalam bab. Setiap bab
-ditutup satu kotak intisari.
-
 ## Hasil
 
 | Berkas | Isi |
@@ -15,16 +12,13 @@ ditutup satu kotak intisari.
 
 ## Struktur
 
-- **Pengantar**: dua kategori kerja, biaya yang tidak tampak, dan dua pertanyaan pemeriksaan
-  singkat.
-- **Bagian 1 — Anatomi Dua Mode Kerja**: deep work dan shallow work sebagai kategori pekerjaan
-  (bukan sifat orang), lima ciri deep work yang bisa diuji, batas sehat shallow work, dan biaya
-  tersembunyi.
-- **Bagian 2 — Mengubah Kebiasaan**: blok berkedalaman, aturan jadwal, lingkungan kerja,
-  contoh sebelum-sesudah, uji batas.
-- **Bagian 3 — Sistem dan Audit**: empat angka mingguan, template audit, penanganan hari buruk,
-  ukuran nyata.
-- **Lampiran**: glosarium, ringkasan argumentasi, apa yang belum terbukti, penutup.
+- **Bagian 1 — Anatomi Dua Mode Kerja**: dua kategori pekerjaan (bukan dua sifat orang), lima
+  ciri deep work yang bisa diuji, dan biaya tersembunyi shallow work.
+- **Bagian 2 — Mengubah Kebiasaan**: blok berkedalaman, aturan main, lingkungan kerja,
+  Template 2.1 (Perencana Blok Mingguan).
+- **Bagian 3 — Sistem dan Audit**: audit empat angka, penanganan hari buruk, Template 3.1
+  (Audit Mingguan).
+- **Lampiran**: glosarium, ringkasan argumentasi, dan daftar hal yang belum terbukti.
 
 ## Sumber
 
@@ -33,6 +27,8 @@ ditutup satu kotak intisari.
 - `figures/*` — diagram HTML/SVG yang warnanya mengikuti tema
 
 ## Build ulang
+
+Dibangun dengan skill `book-layout-designer`:
 
 ```bash
 python scripts/build.py book.yaml --formats pdf,docx --out out

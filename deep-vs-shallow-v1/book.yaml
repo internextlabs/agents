@@ -24,8 +24,8 @@ cover:
   chips: [3 Bagian, 2 Template, 4 Angka]
 back_cover:
   quote: '"Yang hilang bukan waktu, tapi kemampuan yang perlahan berhenti dipakai."'
-  blurb: Buku tentang cara memisahkan pekerjaan berkedalaman dari pekerjaan dangkal, lalu mengubahnya menjadi sistem yang bisa diukur dan dipertahankan.
-  bullets: [Empat prasyarat deep work, Cara menyusun blok yang bertahan, Audit empat angka mingguan, Batasan yang perlu diakui]
+  blurb: Buku pendek tentang cara memisahkan pekerjaan berkedalaman dari pekerjaan dangkal, lalu mengubahnya menjadi sistem yang bisa diukur dan dipertahankan.
+  bullets: [Empat prasyarat deep work, Template perencana blok mingguan, Template audit mingguan, Batasan yang perlu diakui]
 chapters:
   - chapters/*.md
 output:
