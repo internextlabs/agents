@@ -63,12 +63,12 @@ universal, dan satu-satunya angka yang penting adalah angka yang kamu ukur sendi
 
 Apakah blok kerja kamu terlihat di kalender orang lain, atau hanya di kepala kamu sendiri. Kalau
 kalender itu kosong di tempat yang seharusnya terisi, masalahnya bukan disiplin, melainkan
-planning.
+perencanaan.
 
 Kalau semua notifikasi dimatikan selama empat jam, apakah ada pekerjaan yang benar-benar
 tertunda, atau justru tidak ada yang hilang sama sekali. Kalau tidak ada yang hilang, maka waktu
 yang selama ini kamu kira hilang untuk deep work sebenarnya sedang terpakai untuk hal yang
-tidak perlu waited_for.
+tidak perlu ditunggu.
 
 Berapa persen pekerjaan kamu yang akan hilang kalau kamu menghilang seminggu. Persentase ini
 sering kali jauh lebih kecil daripada yang dibayangkan, dan mengetahuinya secara numerik

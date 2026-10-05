@@ -42,7 +42,8 @@ lebih baik dipecah menjadi subbagian biasa.
 
 :::limits Kesalahan yang paling sering terjadi
 Menggunakan callout sebagai hiasan. Kalau semua paragraf dibungkus callout, tidak ada lagi
-yang menonjol — dan komponen yang paling terlihat justru kehilangan tugasnya. Callout untuk pengecualian, bukan untuk emphasises.
+yang menonjol — dan komponen yang paling terlihat justru kehilangan tugasnya. Callout untuk
+pengecualian, bukan untuk emphasises.
 :::
 
 ## 2. Kartu Angka

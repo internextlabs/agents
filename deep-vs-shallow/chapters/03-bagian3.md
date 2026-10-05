@@ -81,15 +81,18 @@ perkiraan kasar, karena yang dicari adalah arah, bukan presisi.
 ```
 
 Bagian yang paling sering diisi kosong adalah bagian perubahan. Ketika itu terjadi, minggu itu
-hanya mengulang apa adanya, dan hasil perbaikannya tidak akan pernah terlihat. Pastikan satu perubahan, sekecil apa pun, jauh lebih berguna daripada lima usulan besar yang tidak pernah
-satu pun dijalankan.
+hanya mengulang apa adanya, dan hasil perbaikannya tidak akan pernah terlihat. Pastikan satu
+perubahan, sekecil apa pun, jauh lebih berguna daripada lima usulan besar
+yang tidak pernah satu pun dijalankan.
 
 ## 5. Menangani Hari Buruk
 
 Hari tanpa satu blok pun itu normal. Yang menentukan adalah apa yang terjadi setelahnya.
 
-Ada minggu-minggu di mana sistem ini memang tidak akan berhasil: minggu dengan tekanan kerja berat, sakit, atau proyek yang sedang berjalan cepat. Memaksa blok pada minggu seperti itu hanya
-menghasilkan rasa bersalah yang tidak perlu, dan lebih buruk lagi, membuat orang membuang seluruh sistemnya setelah dua minggu buruk berturut-turut.
+Ada minggu-minggu di mana sistem ini memang tidak akan berhasil: minggu dengan tekanan kerja
+berat, sakit, atau proyek yang sedang berjalan cepat. Memaksa
+blok pada minggu seperti itu hanya menghasilkan rasa bersalah yang tidak perlu, dan lebih
+buruk lagi, membuat orang membuang seluruh sistemnya setelah dua minggu buruk berturut-turut.
 
 {widths=30,34,36}
 | Situasi | Yang sering dilakukan | Yang lebih berguna |

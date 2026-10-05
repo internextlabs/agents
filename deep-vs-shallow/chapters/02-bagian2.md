@@ -26,9 +26,10 @@ oleh rapat yang kebetulan ada. Blok kerja harus diperlakukan seperti janji ke or
 dianggap ada setelah terlihat di kalender, dan baru dianggap serius setelah orang lain tahu
 kalau kamu ada di sana.
 
-Memblokir waktu di kalender sudah lama dilakukan di berbagai tim kerja sudah lama ada, tetapi hampir selalu diperlakukan
-sebagai hal sementara. Ketika ada yang membatalkan, blok itu dihapus begitu saja dan tidak pernah diisi ulang. Akibatnya, kalender terlihat penuh dengan blok yang tidak pernah benar
-terpakai, dan kalender itu memberi rasa produktif tanpa hasil yang nyata.
+Memblokir waktu di kalender sudah lama dilakukan di berbagai tim kerja, tetapi hampir selalu
+diperlakukan sebagai hal sementara. Ketika ada yang membatalkan, blok itu dihapus begitu saja
+dan tidak pernah diisi ulang. Akibatnya, kalender terlihat penuh dengan blok yang tidak pernah
+benar terpakai, dan kalender itu memberi rasa produktif tanpa hasil yang nyata.
 
 ## 2. Prinsip Kerja
 

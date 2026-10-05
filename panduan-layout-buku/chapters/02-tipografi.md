@@ -22,7 +22,8 @@ membuat hierarki terlihat tanpa perlu banyak warna.
 | premium | Young Serif | Lora | Elegan untuk judul |
 | ceria | Poppins | Work Sans | Bulat dan ramah |
 
-Aturan praktisnya: jangan pernah menambah keluarga huruf ketiga. Tiga keluarga sudah menjadi batas wajar; empat membuat dokumen terlihat berantakan.
+Aturan praktisnya: jangan pernah menambah keluarga huruf ketiga. Tiga keluarga sudah menjadi
+batas wajar; empat membuat dokumen terlihat berantakan.
 
 ## 2. Skala Tipografi
 
