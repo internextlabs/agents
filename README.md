@@ -20,3 +20,5 @@ sendiri.
 
 - `slides/` — Presentasi mobile-first bergaya editorial (HTML)
   - `index.html` — Agen AI vs Chatbot AI (15 slide, portrait, desain majalah premium)
+- `profesi/` — Profesi Masa Depan di Era AI (16 slide)
+- `etika/` — Etika Teknologi: Filsafat Hingga AI (16 slide)
