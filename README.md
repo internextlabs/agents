@@ -15,3 +15,8 @@ books/                    ebook dan panduan (PDF/DOCX)
 Setiap buku berisi `book.yaml` (konfigurasi), `chapters/` (naskah markdown),
 `figures/` (diagram), dan `out/` (PDF/DOCX hasil build). Detail tiap buku ada di README-nya
 sendiri.
+
+## Slides
+
+- `slides/` — Presentasi mobile-first bergaya editorial (HTML)
+  - `index.html` — Agen AI vs Chatbot AI (15 slide, portrait, desain majalah premium)
