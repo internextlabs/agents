@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etika Teknologi - Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF9;
+            --bg-sepia: #78716C;
+            --bg-dark: #1C1917;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --accent: #D6D3D1;
+            --highlight: #A8A29E;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--accent);
+            position: relative;
+        }
+        
+        .slide--cover {
+            background: linear-gradient(135deg, #2D2A27 0%, #1C1917 100%);
+            color: var(--bg-primary);
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--cover .slide__number {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        .slide__number {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .slide__headline {
+            font-family: var(--serif);
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide--cover .slide__headline {
+            font-size: 56px;
+            font-weight: 700;
+        }
+        
+        .slide__subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+        
+        .slide--cover .slide__subtitle {
+            color: var(--accent);
+            font-size: 18px;
+        }
+        
+        .slide__body {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 680px;
+            color: var(--text-primary);
+        }
+        
+        .slide--cover .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide__divider {
+            width: 48px;
+            height: 2px;
+            background: var(--highlight);
+            margin: 24px 0;
+        }
+        
+        .slide--dark {
+            background: var(--bg-dark);
+            color: var(--bg-primary);
+        }
+        
+        .slide--dark .slide__subtitle,
+        .slide--dark .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide--asymmetric {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .slide--asymmetric .slide__headline {
+            align-self: start;
+        }
+        
+        .slide--asymmetric .slide__body {
+            align-self: end;
+            text-align: right;
+        }
+        
+        .slide--centered {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--centered .slide__headline,
+        .slide--centered .slide__body,
+        .slide--centered .slide__divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide__concept-number {
+            font-family: var(--serif);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--highlight);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .slide__concept-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .slide__concept-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            background: var(--text-secondary);
+            color: white;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .slide__timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--accent);
+        }
+        
+        .slide__timeline-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .slide__timeline-era {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .slide__timeline-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .slide--end {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide__end-text {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+        
+        .slide__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .slide__grid-item {
+            padding: 24px;
+            background: rgba(214, 211, 209, 0.1);
+            border-radius: 8px;
+        }
+        
+        .slide__grid-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: var(--serif);
+        }
+        
+        .slide__grid-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 32px 24px;
+            }
+            
+            .slide__headline {
+                font-size: 32px;
+            }
+            
+            .slide--cover .slide__headline {
+                font-size: 40px;
+            }
+            
+            .slide__body {
+                font-size: 18px;
+            }
+            
+            .slide__concept-number {
+                font-size: 48px;
+            }
+            
+            .slide__concept-title {
+                font-size: 28px;
+            }
+            
+            .slide__grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide__timeline {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <section class="slide slide--cover">
+        <span class="slide__number">01 / 16</span>
+        <h1 class="slide__headline">Etika Teknologi</h1>
+        <div class="slide__divider"></div>
+        <p class="slide__subtitle">Perjalanan Filosofis dari Aristoteles Sampai Algorithmic Bias</p>
+        <p class="slide__body" style="margin-top: 48px;">Sebuah eksplorasi editorial tentang moralitas di era digital</p>
+    </section>
+
+    <!-- Slide 2: Prolog -->
+    <section class="slide slide--asymmetric">
+        <span class="slide__number">02 / 16</span>
+        <h2 class="slide__headline">Ketika Alat Menjadi Moral</h2>
+        <p class="slide__body">Teknologi selalu lebih dari sekadar alat netral. Setiap cangkir, roda, atau algoritma membawa serta seperangkat nilai tentang apa yang dianggap penting, siapa yang diuntungkan, dan siapa yang dipinggirkan. Etika teknologi bukan soal menghambat inovasi — melainkan soal memastikan bahwa inovasi itu melayani kemanusiaan, bukan sebaliknya.</p>
+    </section>
+
+    <!-- Slide 3: Akar Filsafat -->
+    <section class="slide">
+        <span class="slide__number">03 / 16</span>
+        <h2 class="slide__headline">Empat Pertanyaan Kuno yang Masih Relevan</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Para filsuf Yunani kuno sudah merumuskan pertanyaan inti etika: apa itu kebaikan? Bagaimana kita ought to behave? Apa nghĩa dari justice? Teknologi modern membawa pertanyaan-pertanyaan ini ke level baru — bukan lagi soal individu yang bertingkah, melainkan sistem berskala miliaran yang mengambil keputusan secara otonom.</p>
+    </section>
+
+    <!-- Slide 4: Utilitarianisme -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">04 / 16</span>
+        <h2 class="slide__headline">Utilitarianisme & Teknologi</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Utilitarianisme menilai tindakan berdasarkan konsekuensinya — maksimalkan kebahagiaan, minimalkan penderitaan. Di era AI, ini diterjemahkan menjadi optimization algorithms yang mencari welfare max untuk population. Tapi siapa yang mendefinisikan kebahagiaan? Dan bagaimana dengan minority groups yang mungkin dikorbankan untuk majority benefit?</p>
+    </section>
+
+    <!-- Slide 5: Deontologi -->
+    <section class="slide">
+        <span class="slide__number">05 / 16</span>
+        <h2 class="slide__headline">Deontologi & Algoritma</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Kant mengatakan beberapa tindakan salah secara inherent, apapun konsekuensinya. Dalam AI, pendekatan ini muncul dalam hard constraints dan guardrails — rules yang tidak bisa di override meskipun violation menghasilkan outcome lebih baik. Pertanyaannya: aturan siapa? Dan siapa yang menulisnya?</p>
+    </section>
+
+    <!-- Slide 6: Virtue Ethics -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">06 / 16</span>
+        <h2 class="slide__headline">Virtue Ethics: Karakter di Balik Kode</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Aristoteles fokus pada character, bukan action. Virtue ethics bertanya: what kind of person would build this technology? Bagaimana dengan AI developers yang prioritaskan speed over safety, atau corporations yang memilih profit over privacy? Etika bukan hanya soal apa yang sistem lakukan — tapi juga siapa yang membangunnya.</p>
+    </section>
+
+    <!-- Slide 7: Transisi Digital -->
+    <section class="slide">
+        <span class="slide__number">07 / 16</span>
+        <h2 class="slide__headline">Revolusi yang Mempercepat Diri Sendiri</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Dari abad ke-18 sampai sekarang, laju perubahan teknologi meningkat eksponensial. Alat yang dulu butuh generasi untuk diadopsi — mesin uap, telegraf, listrik — kini butuh bulan. Akibatnya, kerangka etika tradisional sering ketinggalan jauh di belakang capability teknis. Kita sedang berlari lebih cepat daripada kebijaksanaan kita.</p>
+    </section>
+
+    <!-- Slide 8: Responsibility Gap -->
+    <section class="slide slide--centered">
+        <span class="slide__number">08 / 16</span>
+        <div class="slide__concept-number">01</div>
+        <span class="slide__concept-tag">Konsep Inti</span>
+        <h2 class="slide__headline slide__concept-title">Responsibility Gap</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Ketika AI autonomous membuat kesalahan fatal — mobil self-driving menabrak pejalan kaki, algorithm medical misdiagnosis — siapa yang bertanggung jawab? Developer? Perusahaan? User? Atau mesin itu sendiri? Responsibility gap adalah celah di mana tidak ada satu pun actor yang bisa di-punish secara meaningful.</p>
+    </section>
+
+    <!-- Slide 9: Value Alignment -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">09 / 16</span>
+        <div class="slide__concept-number">02</div>
+        <span class="slide__concept-tag">Konsep Inti</span>
+        <h2 class="slide__headline slide__concept-title">Value Alignment</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Value alignment adalah usaha memastikan tujuan AI selaras dengan nilai-nilai manusia. Tapi masalahnya: nilai manusia itu plural, kontekstual, dan sering kontradiktif. Apa artinya align jika setiap culture memiliki moral framework berbeda? Ini bukan problem teknis semata — ini problem filosofis tentang universalitas vs relativitas nilai.</p>
+    </section>
+
+    <!-- Slide 10: Algorithmic Bias -->
+    <section class="slide">
+        <span class="slide__number">10 / 16</span>
+        <div class="slide__concept-number">03</div>
+        <span class="slide__concept-tag">Konsep Inti</span>
+        <h2 class="slide__headline slide__concept-title">Algorithmic Bias</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Bias algoritma muncul ketika sistem AI mereproduksi atau amplifikasi diskriminasi yang ada di data training-nya. Face recognition yang kurang akurat untuk dark-skinned people, hiring algorithms yang discriminate based on gender — ini bukan bugs, melainkan features dari society yang already biased. Teknologi bukan mirror netral; ia amplifier.</p>
+    </section>
+
+    <!-- Slide 11: Transparency -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">11 / 16</span>
+        <div class="slide__concept-number">04</div>
+        <span class="slide__concept-tag">Konsep Inti</span>
+        <h2 class="slide__headline slide__concept-title">Transparency vs Trade Secret</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Perusahaan AI sering berargumen bahwa transparansi model mereka merugikan competitive advantage. Tapi ketika keputusan AI mempengaruhi nyawa manusia — dari loan approval sampai parole hearing — apakah right to know harus kalahkan proprietary interest? Black box algorithms adalah privilege, bukan necessity.</p>
+    </section>
+
+    <!-- Slide 12: Autonomy -->
+    <section class="slide">
+        <span class="slide__number">12 / 16</span>
+        <div class="slide__concept-number">05</div>
+        <span class="slide__concept-tag">Konsep Inti</span>
+        <h2 class="slide__headline slide__concept-title">Autonomy & Agency</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Seberapa bebas manusia di era predictive algorithms? Ketika Netflix tahu film apa yang akan Anda suka sebelum Anda putuskan, ketika Facebook tahu emotion Anda sebelum Anda sadari — apakah choice Anda masih authentic? Autonomy bukan berarti determinisme, tapi juga bukan illusion of choice yang di-manipulate oleh recommendation engines.</p>
+    </section>
+
+    <!-- Slide 13: Frameworks -->
+    <section class="slide slide--centered">
+        <span class="slide__number">13 / 16</span>
+        <h2 class="slide__headline">Dari Prinsip ke Praktik</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Berbagai framework etika AI telah dikembangkan: UNESCO's Recommendation, EU's AI Act, OECD Principles. Mereka berbagi common themes — fairness, accountability, transparency, human oversight. Tapi prinsip tanpa enforcement hanyalah rhetoric. The real test adalah apakah organizations willing to constrain their own power.</p>
+    </section>
+
+    <!-- Slide 14: Tantangan -->
+    <section class="slide">
+        <span class="slide__number">14 / 16</span>
+        <h2 class="slide__headline">Dimensi Baru yang Muncul</h2>
+        <div class="slide__divider"></div>
+        <div class="slide__grid">
+            <div class="slide__grid-item">
+                <div class="slide__grid-title">Deepfakes</div>
+                <div class="slide__grid-desc">Erosi trust dalam informasi visual</div>
+            </div>
+            <div class="slide__grid-item">
+                <div class="slide__grid-title">Content Saturation</div>
+                <div class="slide__grid-desc">Attention economy yang overwhelm</div>
+            </div>
+            <div class="slide__grid-item">
+                <div class="slide__grid-title">Creative Displacement</div>
+                <div class="slide__grid-desc">AI menggantikan labor kreatif</div>
+            </div>
+            <div class="slide__grid-item">
+                <div class="slide__grid-title">Power Concentration</div>
+                <div class="slide__grid-desc">Few companies control infrastructure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 15: Solusi -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">15 / 16</span>
+        <h2 class="slide__headline">Etika yang Aktif, Bukan Reaktif</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Solusi bukan di regulation semata, maupun di self-regulation industry. Yang dibutuhkan adalah ethic-by-design — integrasi pertimbangan moral sejak fase conceptualization, bukan post-hoc compliance. Multidisciplinary teams, public deliberation, longitudinal impact studies, dan whistleblower protections adalah infrastructure for responsible innovation.</p>
+    </section>
+
+    <!-- Slide 16: Penutup -->
+    <section class="slide slide--end slide--cover">
+        <span class="slide__number">16 / 16</span>
+        <p class="slide__end-text">Teknologi Adalah Cermin, Bukan Takdir.<br><br>Pertanyaan besarnya bukan apa yang bisa kita buat — tapi apa yang ought kita buat.</p>
+        <p class="slide__body" style="margin-top: 48px; font-size: 16px;">Disusun oleh Alys | Publish Slides Mobile Workflow</p>
+    </section>
+
+</body>
+</html>
