@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesi Masa Depan di Era AI - Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF9;
+            --bg-teal: #134E4A;
+            --bg-dark: #1C1917;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --accent: #D6D3D1;
+            --highlight: #A8A29E;
+            --gold: #B45309;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--accent);
+            position: relative;
+        }
+        
+        .slide--cover {
+            background: linear-gradient(135deg, var(--bg-teal) 0%, #0F766E 100%);
+            color: var(--bg-primary);
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--cover .slide__number {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        .slide__number {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .slide__headline {
+            font-family: var(--serif);
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide--cover .slide__headline {
+            font-size: 56px;
+            font-weight: 700;
+        }
+        
+        .slide__subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+        
+        .slide--cover .slide__subtitle {
+            color: var(--accent);
+            font-size: 18px;
+        }
+        
+        .slide__body {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 680px;
+            color: var(--text-primary);
+        }
+        
+        .slide--cover .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide__divider {
+            width: 48px;
+            height: 2px;
+            background: var(--highlight);
+            margin: 24px 0;
+        }
+        
+        .slide--teal {
+            background: var(--bg-teal);
+            color: var(--bg-primary);
+        }
+        
+        .slide--teal .slide__subtitle,
+        .slide--teal .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide--dark {
+            background: var(--bg-dark);
+            color: var(--bg-primary);
+        }
+        
+        .slide--dark .slide__subtitle,
+        .slide--dark .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide--asymmetric {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .slide--asymmetric .slide__headline {
+            align-self: start;
+        }
+        
+        .slide--asymmetric .slide__body {
+            align-self: end;
+            text-align: right;
+        }
+        
+        .slide--centered {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--centered .slide__headline,
+        .slide--centered .slide__body,
+        .slide--centered .slide__divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide__profession-number {
+            font-family: var(--serif);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .slide__profession-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .slide__profession-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            background: var(--gold);
+            color: white;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .slide--end {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide__end-text {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+        
+        .slide__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .slide__grid-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(214, 211, 209, 0.1);
+            border-radius: 8px;
+        }
+        
+        .slide__grid-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .slide__grid-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .slide__grid-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 32px 24px;
+            }
+            
+            .slide__headline {
+                font-size: 32px;
+            }
+            
+            .slide--cover .slide__headline {
+                font-size: 40px;
+            }
+            
+            .slide__body {
+                font-size: 18px;
+            }
+            
+            .slide__profession-number {
+                font-size: 48px;
+            }
+            
+            .slide__profession-title {
+                font-size: 28px;
+            }
+            
+            .slide__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <section class="slide slide--cover">
+        <span class="slide__number">01 / 16</span>
+        <h1 class="slide__headline">Profesi Masa Depan di Era AI</h1>
+        <div class="slide__divider"></div>
+        <p class="slide__subtitle">Sepuluh Jalur Karir yang Akan Mendefinisikan Dekade Depan</p>
+        <p class="slide__body" style="margin-top: 48px;">Sebuah eksplorasi editorial tentang transformasi dunia kerja</p>
+    </section>
+
+    <!-- Slide 2: Prolog -->
+    <section class="slide slide--asymmetric">
+        <span class="slide__number">02 / 16</span>
+        <h2 class="slide__headline">Revolusi yang Tidak Seperti yang Lain</h2>
+        <p class="slide__body">Setiap revolusi industri selalu menghadirkan kepanikan bahwa pekerjaan manusia akan tersingkir. Kali ini berbeda. AI tidak hanya mengganti tenaga fisik — ia menyerang ranah kognitif. Namun dalam kekosongan itu, muncul peluang baru yang sebelumnya tidak terpikirkan.</p>
+    </section>
+
+    <!-- Slide 3: Konteks -->
+    <section class="slide">
+        <span class="slide__number">03 / 16</span>
+        <h2 class="slide__headline">Apa yang Berubah Secara Fundamental</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">AI generatif telah menurunkan biaya produksi konten, kode, dan analisis hingga mendekati nol. Nilai tidak lagi terletak pada eksekusi teknis murni, melainkan pada kemampuan mengarahkan, mengintegrasikan, dan memberikan konteks manusiawi terhadap output mesin.</p>
+    </section>
+
+    <!-- Slide 4: AI Ethicist -->
+    <section class="slide">
+        <span class="slide__number">04 / 16</span>
+        <div class="slide__profession-number">01</div>
+        <span class="slide__profession-tag">Profesi Pertama</span>
+        <h2 class="slide__headline slide__profession-title">AI Ethicist: Penjaga Kompass Moral</h2>
+        <p class="slide__body">Seiring AI mengambil keputusan yang mempengaruhi nyawa manusia — dari diagnosis medis hingga hukuman pengadilan — kita membutuhkan penjaga yang memastikan algoritma tidak merugikan kelompok tertentu. AI Ethicist menerjemahkan nilai-nilai kemanusiaan ke dalam constraint sistem.</p>
+    </section>
+
+    <!-- Slide 5: Prompt Engineer -->
+    <section class="slide slide--teal">
+        <span class="slide__number" style="color: var(--accent);">05 / 16</span>
+        <div class="slide__profession-number">02</div>
+        <span class="slide__profession-tag">Profesi Kedua</span>
+        <h2 class="slide__headline slide__profession-title">Prompt Engineer: Penerjemah Manusia-Mesin</h2>
+        <p class="slide__body">Kemampuan terbaik seorang prompt engineer bukan sekadar menulis dengan benar, melainkan memahami psikologi model, anticipating failure modes, dan merancang chain of thought yang memandu AI melewati masalah kompleks. Ini adalah seni komunikasi baru.</p>
+    </section>
+
+    <!-- Slide 6: AI Trust Auditor -->
+    <section class="slide">
+        <span class="slide__number">06 / 16</span>
+        <div class="slide__profession-number">03</div>
+        <span class="slide__profession-tag">Profesi Ketiga</span>
+        <h2 class="slide__headline slide__profession-title">AI Trust Auditor: Inspektur Kredibilitas</h2>
+        <p class="slide__body">Di era deepfake dan content factory otomatis, kita membutuhkan profesional yang mampu memverifikasi keaslian informasi, melacak provenance konten, dan mengaudit bias model sebelum digunakan secara publik. Trust auditor adalah detektif di dunia post-truth.</p>
+    </section>
+
+    <!-- Slide 7: Human-AI Collaboration Designer -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">07 / 16</span>
+        <div class="slide__profession-number">04</div>
+        <span class="slide__profession-tag">Profesi Keempat</span>
+        <h2 class="slide__headline slide__profession-title">Human-AI Collaboration Designer: Arsitek Sinergi</h2>
+        <p class="slide__body">Profesi ini tidak membangun AI — mereka merancang cara manusia dan AI bekerja sama secara optimal. Dari antarmuka yang mengurangi cognitive load, hingga workflow yang memanfaatkan strengths masing-masing pihak. Ini adalah disiplin baru di persimpangan HCI dan organizational psychology.</p>
+    </section>
+
+    <!-- Slide 8: Data Storyteller -->
+    <section class="slide">
+        <span class="slide__number">08 / 16</span>
+        <div class="slide__profession-number">05</div>
+        <span class="slide__profession-tag">Profesi Kelima</span>
+        <h2 class="slide__headline slide__profession-title">Data Storyteller: Pencerita yang Berbasis Fakta</h2>
+        <p class="slide__body">AI bisa menghasilkan laporan, analisis, dan visualisasi — tetapi yang mengubah data menjadi insight yang menggerakkan keputusan adalah narasi. Data storyteller menggabungkan kepekaan jurnalistik dengan kemampuan teknis untuk merangkum kompleksitas menjadi cerita yang resonan.</p>
+    </section>
+
+    <!-- Slide 9: AI Psychologist -->
+    <section class="slide slide--teal">
+        <span class="slide__number" style="color: var(--accent);">09 / 16</span>
+        <div class="slide__profession-number">06</div>
+        <span class="slide__profession-tag">Profesi Keenam</span>
+        <h2 class="slide__headline slide__profession-title">AI Psychologist: Therapis Relasi Manusia-Mesin</h2>
+        <p class="slide__body">Semakin banyak manusia berinteraksi dengan agen AI secara intim — asisten pribadi, companion chat, virtual therapist — muncul kebutuhan akan profesional yang memahami dampak psikologis dari hubungan tersebut. AI psychologist meneliti attachment, dependency, dan identitas di era synthetic interlocutors.</p>
+    </section>
+
+    <!-- Slide 10: Synthetic Media Director -->
+    <section class="slide">
+        <span class="slide__number">10 / 16</span>
+        <div class="slide__profession-number">07</div>
+        <span class="slide__profession-tag">Profesi Ketujuh</span>
+        <h2 class="slide__headline slide__profession-title">Synthetic Media Director: Sutradara Realitas Buatan</h2>
+        <p class="slide__body">Ketika video, suara, dan gambar bisa di-generate seketika, kita membutuhkan director yang bisa mengarahkan produksi konten sintetis dengan etis dan kreatif. Bukan sekadar memakai AI, melainkan memahami aesthetic, narrative, dan implication dari setiap choice produksi.</p>
+    </section>
+
+    <!-- Slide 11: Algorithmic Debugger -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">11 / 16</span>
+        <div class="slide__profession-number">08</div>
+        <span class="slide__profession-tag">Profesi Kedelapan</span>
+        <h2 class="slide__headline slide__profession-title">Algorithmic Debugger: Detektif Kode Abstrak</h2>
+        <p class="slide__body">AI membuat keputusan yang sering kali black box. Algorithmic debugger bertugas membongkar mengapa di balik output tersebut — melacak bias, menemukan logic flaw, dan merekomendasikan perbaikan. Ini adalah gabungan dari debugging, forensik digital, dan statistical auditing.</p>
+    </section>
+
+    <!-- Slide 12: AI Policy Strategist -->
+    <section class="slide">
+        <span class="slide__number">12 / 16</span>
+        <div class="slide__profession-number">09</div>
+        <span class="slide__profession-tag">Profesi Kesembilan</span>
+        <h2 class="slide__headline slide__profession-title">AI Policy Strategist: Perancang Tata Kelola</h2>
+        <p class="slide__body">Governments dan corporations struggling untuk mengadopsi AI secara responsible. AI policy strategist bridge antara teknologi dan regulasi — menerjemahkan capability AI ke dalam framework governance, risk assessment, dan compliance strategy yang actionable.</p>
+    </section>
+
+    <!-- Slide 13: Cognitive Augmentation Specialist -->
+    <section class="slide slide--teal">
+        <span class="slide__number" style="color: var(--accent);">13 / 16</span>
+        <div class="slide__profession-number">10</div>
+        <span class="slide__profession-tag">Profesi Kesepuluh</span>
+        <h2 class="slide__headline slide__profession-title">Cognitive Augmentation Specialist: Extender Pikiran</h2>
+        <p class="slide__body">Profesi ini fokus pada enhancement kemampuan kognitif manusia melalui AI — dari memory augmentation systems hingga decision support tools. Tujuannya bukan menggantikan pikiran manusia, melainkan memperluas kapasitasnya tanpa kehilangan agency.</p>
+    </section>
+
+    <!-- Slide 14: Pola Umum -->
+    <section class="slide slide--centered">
+        <span class="slide__number">14 / 16</span>
+        <h2 class="slide__headline">Benang Merah Sepuluh Profesi Ini</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Perhatikan pola yang muncul. Semua profesi di atas memiliki satu kesamaan: mereka tidak bersaing dengan AI dalam hal komputasi, melainkan berfokus pada what AI belum bisa lakukan — moral reasoning, contextual judgment, emotional intelligence, creative direction, dan responsibility.</p>
+    </section>
+
+    <!-- Slide 15: Kesimpulan -->
+    <section class="slide">
+        <span class="slide__number">15 / 16</span>
+        <h2 class="slide__headline">Masa Depan Adalah Human-Centric AI</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">AI tidak akan menghilangkan profesi — ia akan mendefinisikan ulang apa artinya bekerja. Yang dibutuhkan generasi mendatang bukan sekadar technical skills, tetapi ability to direct, judge, dan meaningful create. Keunggulan manusia di era AI adalah kebijaksanaan, bukan kecepatan.</p>
+    </section>
+
+    <!-- Slide 16: Penutup -->
+    <section class="slide slide--end slide--dark">
+        <span class="slide__number" style="color: var(--accent);">16 / 16</span>
+        <p class="slide__end-text">Kamu Adalah Bagian dari Jawaban.<br><br>Pertanyaan besarnya bukan apakah AI akan mengambil pekerjaan saya, melainkan bagaimana saya bisa menggunakan AI untuk menjadi lebih valuable.</p>
+        <p class="slide__body" style="margin-top: 48px; font-size: 16px;">Disusun oleh Alys | Publish Slides Mobile Workflow</p>
+    </section>
+
+</body>
+</html>
