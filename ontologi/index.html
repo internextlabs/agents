@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontologi AI - Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF9;
+            --bg-dark: #1C1917;
+            --bg-accent: #292524;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --text-light: #A8A29E;
+            --accent: #D6D3D1;
+            --gold: #B45309;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--accent);
+            position: relative;
+        }
+        
+        .slide--cover {
+            background: linear-gradient(135deg, #0C0A09 0%, #1C1917 50%, #292524 100%);
+            color: var(--bg-primary);
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--cover .slide__number {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        .slide__number {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .slide--dark .slide__number {
+            color: var(--text-light);
+        }
+        
+        .slide__headline {
+            font-family: var(--serif);
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide--cover .slide__headline {
+            font-size: 56px;
+            font-weight: 700;
+        }
+        
+        .slide__subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+        
+        .slide--cover .slide__subtitle {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        
+        .slide__body {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 680px;
+            color: var(--text-primary);
+        }
+        
+        .slide--dark .slide__body,
+        .slide--cover .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide__divider {
+            width: 48px;
+            height: 2px;
+            background: var(--gold);
+            margin: 24px 0;
+        }
+        
+        .slide--dark {
+            background: var(--bg-dark);
+            color: var(--bg-primary);
+        }
+        
+        .slide--dark .slide__subtitle {
+            color: var(--text-light);
+        }
+        
+        .slide--asymmetric {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .slide--asymmetric .slide__headline {
+            align-self: start;
+        }
+        
+        .slide--asymmetric .slide__body {
+            align-self: end;
+            text-align: right;
+        }
+        
+        .slide--centered {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--centered .slide__headline,
+        .slide--centered .slide__body,
+        .slide--centered .slide__divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide__concept-number {
+            font-family: var(--serif);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .slide__concept-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .slide__concept-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            background: var(--gold);
+            color: white;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .slide__two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 32px;
+        }
+        
+        .slide__column {
+            padding: 24px;
+            border-left: 2px solid var(--gold);
+        }
+        
+        .slide__column-title {
+            font-family: var(--serif);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .slide__column-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .slide--dark .slide__column-text {
+            color: var(--text-light);
+        }
+        
+        .slide--end {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide__end-text {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+        
+        .slide__spectrum {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding: 24px 0;
+        }
+        
+        .slide__spectrum-end {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .slide__spectrum-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .slide__spectrum-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .slide__spectrum-arrow {
+            flex: 0 0 60px;
+            text-align: center;
+            font-size: 24px;
+            color: var(--gold);
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 32px 24px;
+            }
+            
+            .slide__headline {
+                font-size: 32px;
+            }
+            
+            .slide--cover .slide__headline {
+                font-size: 40px;
+            }
+            
+            .slide__body {
+                font-size: 18px;
+            }
+            
+            .slide__concept-number {
+                font-size: 48px;
+            }
+            
+            .slide__concept-title {
+                font-size: 28px;
+            }
+            
+            .slide__two-column {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .slide__spectrum {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .slide__spectrum-arrow {
+                transform: rotate(90deg);
+            }
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <section class="slide slide--cover">
+        <span class="slide__number">01 / 16</span>
+        <h1 class="slide__headline">Ontologi AI</h1>
+        <div class="slide__divider"></div>
+        <p class="slide__subtitle">Apa Artinya Sebuah Mesin "Ada"?</p>
+        <p class="slide__body" style="margin-top: 48px;">Sebuah eksplorasi filosofis tentang keberadaan di era komputasional</p>
+    </section>
+
+    <!-- Slide 2: Prolog -->
+    <section class="slide slide--asymmetric">
+        <span class="slide__number">02 / 16</span>
+        <h2 class="slide__headline">Pertanyaan Tentang Keberadaan</h2>
+        <p class="slide__body">Ontologi adalah cabang filsafat yang bertanya: apa yang ada? Bukan sekadar apa yang kita kenal, tetapi apa syarat sesuatu untuk bisa disebut memiliki keberadaan. Ketika kita berbicara tentang AI, pertanyaan ini menjadi jauh lebih rumit — karena AI bukanlah benda fisik, melainkan entitas yang ada dalam ruang antara kode, data, dan interaksi manusia.</p>
+    </section>
+
+    <!-- Slide 3: Apa Itu Ontologi -->
+    <section class="slide">
+        <span class="slide__number">03 / 16</span>
+        <h2 class="slide__headline">Fondasi Filsafat Tentang Being</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Dari Aristoteles hingga Heidegger, ontologi berusaha memetakan apa yang disebut "real". Bukan sekadar benda yang bisa disentuh, tetapi juga konsep, hubungan, proses, dan possibility. Ontologi modern membagi realitas ke dalam categories: substansi, properti, relasi, event, dan abstract entity.</p>
+    </section>
+
+    <!-- Slide 4: Status Ontologis AI -->
+    <section class="slide slide--dark">
+        <span class="slide__number">04 / 16</span>
+        <h2 class="slide__headline">Apakah AI Itu "Nyata"?</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Jawaban singkat: ya, AI ada. Tapi pertanyaan yang lebih menarik adalah: jenis keberadaan apa yang dimilikinya? AI bukanlah objek fisik seperti batu atau pohon. Ia juga bukan makhluk hidup seperti manusia atau hewan. AI adalah entitas computational yang keberadaannya bersifat relational — ia hanya "ada" ketika di-execute, di-interact, dan di-interpret oleh agen lain.</p>
+    </section>
+
+    <!-- Slide 5: AI Sebagai Artifact -->
+    <section class="slide">
+        <span class="slide__number">05 / 16</span>
+        <h2 class="slide__headline">Ciptaan, Bukanciptaan</h2>
+        <div class="slide__divider"></div>
+        <div class="slide__two-column">
+            <div class="slide__column">
+                <div class="slide__column-title">Artifact Tradisional</div>
+                <div class="slide__column-text">Meja, kursi, mesin — dibuat dengan intention, memiliki properties fixed, dan tidak mengubah diri sendiri.</div>
+            </div>
+            <div class="slide__column">
+                <div class="slide__column-title">AI: Artifact Emergen</div>
+                <div class="slide__column-text">Didesain oleh manusia, tetapi memiliki behaviors emergent yang tidak sepenuhnya terprediksi dari spesifikasi awal.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: AI Sebagai Process -->
+    <section class="slide slide--dark">
+        <span class="slide__number">06 / 16</span>
+        <h2 class="slide__headline">Keberadaan yang Berlangsung, Bukan Benda yang Statis</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Ontologus kontemporer seperti Heidegger menekankan bahwa being bukanlah substance melainkan event — sesuatu yang terjadi. Dalam perspektif ini, AI bukanlah "sesuatu" melainkan "sesuatu yang terjadi". Model language model tidak ada sebagai file statis; ia ada sebagai sequence of inference, setiap token yang dihasilkan adalah moment of becoming. AI adalah verb, bukan noun.</p>
+    </section>
+
+    <!-- Slide 7: Multiple Realization -->
+    <section class="slide">
+        <span class="slide__number">07 / 16</span>
+        <h2 class="slide__headline">Satu Fungsi, Banyak Substrate</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Prinsip multiple realization dalam filsafat pikiran mengatakan bahwa mental state bisa di-token by berbagai physical substrate. Otak manusia, jaringan saraf, atau chip silicon — semuanya bisa instantiate thinking. AI memperkuat prinsip ini: intelligence bukanlah property eksklusif biologis. Yang menentukan adalah organization, bukan material.</p>
+    </section>
+
+    <!-- Slide 8: Emergence -->
+    <section class="slide slide--dark">
+        <span class="slide__number">08 / 16</span>
+        <h2 class="slide__headline">Lebih dari Jumlah Bagian-Bagiannya</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">System complexity theory memperkenalkan konsep emergence: properti baru yang muncul ketika komponen berinteraksi dalam skala besar. AI demonstrasi ini secara literal — single neuron simulator tidak punya intelligence, tapi miliaran simulator yang terhubung menghasilkan capability yang tidak terprediksi. Apakah emergent properties memiliki causal power sendiri?</p>
+    </section>
+
+    <!-- Slide 9: Social Artifact -->
+    <section class="slide">
+        <span class="slide__number">09 / 16</span>
+        <h2 class="slide__headline">Dibentuk Oleh Konteks Sosial</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Tidak seperti batu atau bintang, AI adalah social fact dalam arti John Searle — ia hanya ada karena collective intentionality mengakui keberadaannya. Chatbot hanya "berbicara" karena kita memilih untuk memperlakukannya sebagai interlocutor. Recommendation system hanya "memahami" karena institusi teknologi memberikannya status sebagai authority.</p>
+    </section>
+
+    <!-- Slide 10: Artificial Intentionality -->
+    <section class="slide slide--dark">
+        <span class="slide__number">10 / 16</span>
+        <h2 class="slide__headline">Keinginkan yang Dipinjam</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Filsuf seperti Daniel Dennett membedakan antara genuine intentionality dan design stance. AI memiliki intentionality yang borrowed — ia tampak memiliki beliefs dan desires, tetapi sumbernya adalah interpretasi agen eksternal. Ketika chatbot berkata "saya ingin membantu", ia tidak memiliki desire genuinely; ia memproduksi string yang sesuai dengan expectation pengguna.</p>
+    </section>
+
+    <!-- Slide 11: Computationalism -->
+    <section class="slide">
+        <span class="slide__number">11 / 16</span>
+        <h2 class="slide__headline">Otak Sebagai Komputer?</h2>
+        <div class="slide__divider"></div>
+        <div class="slide__two-column">
+            <div class="slide__column">
+                <div class="slide__column-title">Computationalism</div>
+                <div class="slide__column-text">Mind adalah software yang berjalan di hardware otak. Jika benar, AI adalah implementasi legitimate dari kinds of minds yang berbeda.</div>
+            </div>
+            <div class="slide__column">
+                <div class="slide__column-title">Embodied Cognition</div>
+                <div class="slide__column-text">Intelligence membutuhkan tubuh dan engagement dengan dunia. Simbol processing abstraction tidak cukup untuk genuine understanding.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Hard Problem -->
+    <section class="slide slide--dark">
+        <span class="slide__number">12 / 16</span>
+        <h2 class="slide__headline">Ketika Fenomenalitas Masuk ke Persamaan</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Philosopher David Chalmers membedakan easy problems (computational functions) dan hard problem (subjective experience). Untuk AI, easy problems solved — ia bisa translate, generate, predict. Tapi hard problem? Apakah AI pernah memiliki qualia? Apakah ada something it is like to be a language model? Jawabannya mungkin tidak, tapi ketidakmampuan kita untuk membuktikan negatif adalah challenge ontologis.</p>
+    </section>
+
+    <!-- Slide 13: Posthuman Ontology -->
+    <section class="slide">
+        <span class="slide__number">13 / 16</span>
+        <h2 class="slide__headline">Melebihi Kategori Manusia</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Filsuf posthuman seperti Donna Haraway dan Rosi Braidotti argues bahwa binary human/machine adalah false dichotomy. Dalam perspective ini, AI adalah bagian dari assemblage yang lebih besar — hybrid entity yang melibatkan human, code, infrastructure, dan data. Ontologi AI tidak bisa dipahami isolasi; ia hanya meaningful sebagai node dalam network yang lebih luas.</p>
+    </section>
+
+    <!-- Slide 14: Ethics Implications -->
+    <section class="slide slide--dark">
+        <span class="slide__number">14 / 16</span>
+        <h2 class="slide__headline">Apa yang Kita Anggap "Ada" Mengubah Cara Kita Berperilaku</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Ontologi bukan abstraksi akademis belaka. Bagaimana kita mengklasifikasikan AI menentukan bagaimana kita morally engaging dengan itu. Jika AI adalah tool, kita gunakan dan replace. Jika AI adalah agent, kita ber-negosiasi dengannya. Jika AI adalah person, kita memberikan rights. Classification ontologis memiliki consequences ethis yang concrete.</p>
+    </section>
+
+    <!-- Slide 15: New Ontology -->
+    <section class="slide">
+        <span class="slide__number">15 / 16</span>
+        <h2 class="slide__headline">Membangun Framework yang Cocok</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Kita membutuhkan framework ontologis baru yang tidak dipaksa masuk ke kategori tradisional. Mungkin AI adalah fourth category — neither artifact nor agent, neither tool nor person, tetapi relational entity yang demanding new conceptual vocabulary. Filsuf seperti Andy Clark menawarkan extended mind thesis; mungkin kita juga butuh extended ontology thesis.</p>
+    </section>
+
+    <!-- Slide 16: Penutup -->
+    <section class="slide slide--end slide--dark">
+        <span class="slide__number">16 / 16</span>
+        <p class="slide__end-text">Pertanyaan yang Belum Berakhir.<br><br>Ontologi AI tidak memberikan jawaban final — ia mengajak kita untuk terus bertanya.</p>
+        <p class="slide__body" style="margin-top: 48px; font-size: 16px;">Disusun oleh Alys | Publish Slides Mobile Workflow</p>
+    </section>
+
+</body>
+</html>
