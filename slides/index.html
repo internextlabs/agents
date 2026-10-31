@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agen AI vs Chatbot AI - Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF9;
+            --bg-dark: #1C1917;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --accent: #D6D3D1;
+            --highlight: #A8A29E;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--accent);
+            position: relative;
+        }
+        
+        .slide--cover {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #2D2A27 100%);
+            color: var(--bg-primary);
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--cover .slide__number {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        .slide__number {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .slide__headline {
+            font-family: var(--serif);
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide--cover .slide__headline {
+            font-size: 56px;
+            font-weight: 700;
+        }
+        
+        .slide__subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+        
+        .slide--cover .slide__subtitle {
+            color: var(--accent);
+            font-size: 18px;
+        }
+        
+        .slide__body {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 680px;
+            color: var(--text-primary);
+        }
+        
+        .slide--cover .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide__divider {
+            width: 48px;
+            height: 2px;
+            background: var(--highlight);
+            margin: 24px 0;
+        }
+        
+        .slide--asymmetric {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .slide--asymmetric .slide__headline {
+            align-self: start;
+        }
+        
+        .slide--asymmetric .slide__body {
+            align-self: end;
+            text-align: right;
+        }
+        
+        .slide--centered {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide--centered .slide__headline,
+        .slide--centered .slide__body,
+        .slide--centered .slide__divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide--dark {
+            background: var(--bg-dark);
+            color: var(--bg-primary);
+        }
+        
+        .slide--dark .slide__subtitle,
+        .slide--dark .slide__body {
+            color: var(--accent);
+        }
+        
+        .slide__quote {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 600px;
+            position: relative;
+            padding-left: 32px;
+            border-left: 3px solid var(--highlight);
+        }
+        
+        .slide__attribution {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .slide__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .slide__grid-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(214, 211, 209, 0.1);
+            border-radius: 8px;
+        }
+        
+        .slide__grid-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .slide__grid-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .slide__grid-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .slide--end {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .slide__end-text {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 32px 24px;
+            }
+            
+            .slide__headline {
+                font-size: 32px;
+            }
+            
+            .slide--cover .slide__headline {
+                font-size: 40px;
+            }
+            
+            .slide__body {
+                font-size: 18px;
+            }
+            
+            .slide__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <section class="slide slide--cover">
+        <span class="slide__number">01 / 15</span>
+        <h1 class="slide__headline">Agen AI vs Chatbot AI</h1>
+        <div class="slide__divider"></div>
+        <p class="slide__subtitle">Perbedaan Mendasar antara Asisten Cerdas dan Pembicara Otomatis</p>
+        <p class="slide__body" style="margin-top: 48px;">Sebuah presentasi editorial tentang evolusi kecerdasan buatan</p>
+    </section>
+
+    <!-- Slide 2: Prolog -->
+    <section class="slide slide--asymmetric">
+        <span class="slide__number">02 / 15</span>
+        <h2 class="slide__headline">Dua Wajah Kecerdasan Buatan</h2>
+        <p class="slide__body">Di era digital yang terus berkembang, kita sering mencampurkan dua konsep yang sebenarnya berbeda: agen AI dan chatbot AI. Meskipun sama-sama powered by AI, keduanya memiliki karakter, kemampuan, dan tujuan yang jauh bersebelahan. Memahami perbedaannya bukan sekadar soal teknis, melainkan soal bagaimana kita merancang interaksi masa depan dengan mesin.</p>
+    </section>
+
+    <!-- Slide 3: Definisi Chatbot -->
+    <section class="slide">
+        <span class="slide__number">03 / 15</span>
+        <h2 class="slide__headline">Chatbot: Pembicara yang Terprogram</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Chatbot AI adalah program komputer yang dirancang untuk mensimulasikan percakapan dengan manusia. Ia bekerja berdasarkan pola respons yang telah ditetapkan sebelumnya atau machine learning sederhana. Tujuannya adalah memberikan jawaban cepat atas pertanyaan spesifik tanpa memerlukan konteks mendalam.</p>
+    </section>
+
+    <!-- Slide 4: Definisi Agen AI -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">04 / 15</span>
+        <h2 class="slide__headline">Agen AI: Pekerja yang Bernalar</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Agen AI adalah sistem otonom yang tidak hanya merespons, tetapi juga merencanakan, melaksanakan, dan mengevaluasi tugas secara bertahap. Ia memiliki tujuan, dapat menggunakan tools eksternal, mengingat konteks jangka panjang, dan mengambil inisiatif tanpa perlu diinstruksikan langkah demi langkah.</p>
+    </section>
+
+    <!-- Slide 5: Analogi -->
+    <section class="slide slide--centered">
+        <span class="slide__number">05 / 15</span>
+        <h2 class="slide__headline">Resepsionis vs Projekt Manager</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Bayangkan chatbot seperti resepsionis cerdas yang bisa menjawab pertanyaan umum dengan sopan dan cepat. Agen AI Sebaliknya ibarat projekt manager yang tidak hanya mendengar, tetapi juga menyusun rencana, mendelegasikan tasks, memantau progress, dan melaporkan hasil akhir.</p>
+    </section>
+
+    <!-- Slide 6: Arsitektur -->
+    <section class="slide">
+        <span class="slide__number">06 / 15</span>
+        <h2 class="slide__headline">Bagaimana Mereka Bekerja</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Chatbot umumnya dibangun dengan pattern matching, rule-based systems, atau model language model fine-tuned untuk conversational tasks. Agen AI menggunakan arsitektur lebih kompleks: planning modules, memory systems, tool use capabilities, dan reinforcement learning untuk pengambilan keputusan multi-langkah.</p>
+    </section>
+
+    <!-- Slide 7: Keunggulan Chatbot -->
+    <section class="slide">
+        <span class="slide__number">07 / 15</span>
+        <h2 class="slide__headline">Keunggulan Chatbot</h2>
+        <div class="slide__divider"></div>
+        <div class="slide__grid">
+            <div class="slide__grid-item">
+                <div class="slide__grid-icon">⚡</div>
+                <div class="slide__grid-title">Respon Cepat</div>
+                <div class="slide__grid-desc">Jawaban instant untuk pertanyaan rutin</div>
+            </div>
+            <div class="slide__grid-item">
+                <div class="slide__grid-icon">🎯</div>
+                <div class="slide__grid-title">Konsisten</div>
+                <div class="slide__grid-desc">Jawaban seragam tanpa emosi</div>
+            </div>
+            <div class="slide__grid-item">
+                <div class="slide__grid-icon">🔌</div>
+                <div class="slide__grid-title">Mudah Integrasi</div>
+                <div class="slide__grid-desc">WhatsApp, website, apps</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Keunggulan Agen -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">08 / 15</span>
+        <h2 class="slide__headline">Keunggulan Agen AI</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Agen AI mampu melakukan reasoning chain, multi-step planning, tool integration (browsing, coding, executing), dan autonomous decision making. Mereka bisa belajar dari feedback, mengingat preferensi user, dan berkolaborasi dengan agen lain untuk menyelesaikan tugas kompleks yang membutuhkan koordinasi.</p>
+    </section>
+
+    <!-- Slide 9: Contoh Penggunaan -->
+    <section class="slide">
+        <span class="slide__number">09 / 15</span>
+        <h2 class="slide__headline">Kapan Menggunakan Apa</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body"><strong>Chatbot:</strong> layanan pelanggan 24/7, booking appointment, informasi produk, FAQ.<br><br><strong>Agen AI:</strong> riset pasar otomatis, penulisan konten multi-bab, automasi workflow bisnis, analisis data kompleks.</p>
+    </section>
+
+    <!-- Slide 10: Interaksi -->
+    <section class="slide slide--asymmetric">
+        <span class="slide__number">10 / 15</span>
+        <h2 class="slide__headline">Cara Kita Berbicara dengan Mereka</h2>
+        <p class="slide__body">Chatbot mengharapkan prompt singkat dan langsung. Agen AI justru memungkinkan conversational flow yang lebih natural karena ia memahami konteks dan bisa mengikuti thread pemikiran yang berkembang. Dengan agen, kita bisa berkata "tolong buatkan laporan Q3" dan ia akan bertanya klarifikasi jika needed, lalu execute sendiri.</p>
+    </section>
+
+    <!-- Slide 11: Batasan Chatbot -->
+    <section class="slide">
+        <span class="slide__number">11 / 15</span>
+        <h2 class="slide__headline">Tembok Tak Terlewati</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Chatbot terjebak dalam loop pertanyaan-jawaban linear. Ia tidak bisa mengambil inisiatif, tidak punya memory jangka panjang antar sesi, dan gagal total ketika confronted dengan pertanyaan out-of-scope. Kadang, ia bahkan memberikan jawaban yang terdengar masuk akal tetapi sebenarnya salah — fenomena hallucination.</p>
+    </section>
+
+    <!-- Slide 12: Batasan Agen -->
+    <section class="slide slide--dark">
+        <span class="slide__number" style="color: var(--accent);">12 / 15</span>
+        <h2 class="slide__headline">Harga dari Otonomi</h2>
+        <div class="slide__divider" style="background: var(--highlight);"></div>
+        <p class="slide__body">Agen AI membutuhkan computational power lebih besar, waktu response lebih lama, dan desain sistem yang matang. Mereka juga lebih sulit debug karena decision making-nya distributed across multiple steps. Terkadang, agen bisa "terlalu otonom" dan melakukan hal di luar yang diharapkan creator-nya.</p>
+    </section>
+
+    <!-- Slide 13: Masa Depan -->
+    <section class="slide slide--centered">
+        <span class="slide__number">13 / 15</span>
+        <h2 class="slide__headline">Konvergensi atau Kohabitas?</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Tren menunjukkan chatbot đang berevolusi menjadi lebih contextual, sementara agen AI menjadi lebih accessible. Beberapa vendor sudah menawarkan hybrid models di mana chatbot handling queries sederhana dan delegating complex tasks ke agent backend.</p>
+    </section>
+
+    <!-- Slide 14: Kesimpulan -->
+    <section class="slide">
+        <span class="slide__number">14 / 15</span>
+        <h2 class="slide__headline">Pilih Alat yang Tepat</h2>
+        <div class="slide__divider"></div>
+        <p class="slide__body">Chatbot dan agen AI bukanlah competitor, melainkan complement. Chatbot adalah pintu masuk yang ramah untuk interaksi sehari-hari. Agen AI adalah mesin produksi untuk pekerjaan kompleks. Pemahaman yang jelas tentang perbedaan mereka memungkinkan kita deploy solusi yang lebih efektif dan human-centered.</p>
+    </section>
+
+    <!-- Slide 15: Penutup -->
+    <section class="slide slide--end slide--dark">
+        <span class="slide__number" style="color: var(--accent);">15 / 15</span>
+        <p class="slide__end-text">Intelligent Doesn't Mean Autonomous.<br><br>Kadang, jawaban cepat yang presisi lebih berharga daripada proses panjang yang tidak pasti.</p>
+        <p class="slide__body" style="margin-top: 48px; font-size: 16px;">Disusun oleh Alys | Article-Gen-1 Workflow</p>
+    </section>
+
+</body>
+</html>
