@@ -23,3 +23,4 @@ sendiri.
 - `profesi/` — Profesi Masa Depan di Era AI (16 slide)
 - `etika/` — Etika Teknologi: Filsafat Hingga AI (16 slide)
 - `ontologi/` — Ontologi AI: Apa Artinya Sebuah Mesin "Ada"? (16 slide)
+- `pembuktian/` — Pembuktian Matematika: Seni Menunjukkan Kebenaran (16 slide)
